@@ -1,0 +1,4 @@
+[deploy]
+startCommand = "bun run start"
+healthcheckPath = "/health"
+restartPolicyType = "ALWAYS"
