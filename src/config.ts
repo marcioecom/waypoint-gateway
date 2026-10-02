@@ -5,7 +5,7 @@ const envSchema = z.object({
     .enum(["development", "production", "test"])
     .default("development"),
   PORT: z.coerce.number().default(3000),
-  AGENT_URL: z.url().default("http://localhost:8000"),
+  AGENT_URL: z.url().or(z.ipv6()).default("http://localhost:8000"),
   GATEWAY_TOKEN: z.string().default(""),
   AUTH_DIR: z.string().min(1).default("auth_info_baileys"),
 });
